@@ -1,0 +1,29 @@
+<div class="fullBackground">
+  <div>
+    <h1>TODO List</h1>
+    <p>A place to store your todos</p>
+    <form>
+      <!-- <label for="task">Filter your todos</label><br /> -->
+      <input
+        placeholder="Filter your todos"
+        type="text"
+        id="task"
+        name="task"
+      />
+      <input type="submit" id="submit" value="Add" />
+    </form>
+  </div>
+  <span>
+    <div *ngFor="let completed of todo">
+      <ol>
+        <li>
+          <button id="done" *ngIf="completed.completed">
+            complete
+          </button>
+          {{ completed.task }}
+        </li>
+      </ol>
+      <button id="notdone" *ngIf="!completed.completed">X</button>
+    </div>
+  </span>
+</div>
